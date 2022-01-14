@@ -1,6 +1,6 @@
 import { CommandInt } from "../interfaces/CommandInt";
 import CamperModel from "../database/models/CamperModel";
-import { MessageEmbed, EmbedAuthorData } from "discord.js";
+import { MessageEmbed } from "discord.js";
 
 export const oneHundred: CommandInt = {
     name : "100",
@@ -36,11 +36,13 @@ export const oneHundred: CommandInt = {
         // creating embedded message the bot should send
         const oneHundredEmbed = new MessageEmbed();
         oneHundredEmbed.setTitle("100 Days of Code");
+        
+        // use message that user sent
         oneHundredEmbed.setDescription(text);
         
         oneHundredEmbed.setAuthor({name: author.username + "#" + author.discriminator, url: author.displayAvatarURL()});
-        console.log(targetCamperData.round, targetCamperData.day)
-        console.log(targetCamperData.round as unknown as string, targetCamperData.day as unknown as string)
+        // console.log(targetCamperData.round, targetCamperData.day)
+        // console.log(targetCamperData.round as unknown as string, targetCamperData.day as unknown as string)
         oneHundredEmbed.addField("Round", targetCamperData.round.toString(), true);
         oneHundredEmbed.addField("Day", targetCamperData.day.toString(), true);
 
